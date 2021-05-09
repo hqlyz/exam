@@ -43,10 +43,10 @@ L:
 				break L
 			}
 		}
-		// 一年还完后将每年累计还款金额清零
-		annualPay = 0
 		// 重新计算未还金额
 		outstandingPrincipal = outstandingPrincipal*annualInterest + (outstandingPrincipal - annualPay)
+		// 一年还完后将每年累计还款金额清零
+		annualPay = 0
 	}
 	log.Printf("It will take %d months", totalMonths)
 	log.Printf("It will pay %.2f in total", totalPay-lastPayOffset)
